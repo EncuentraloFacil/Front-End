@@ -9,13 +9,16 @@ import { Consumidor } from 'src/app/model/consumidor';
 })
 export class ConsumidorListarComponent implements OnInit {
   dataSource: MatTableDataSource<Consumidor> = new MatTableDataSource();
-  displayedColumns:string[]=['Id','Name','DNI','Edad','Celular','Email','Usuario','Password']
+  displayedColumns:string[]=['Id','Name','DNI','Edad','Celular','Email','Usuario','Password','acciones']
 
   constructor(private cS:ConsumidorService) { }
 
   ngOnInit(): void {
     this.cS.listar().subscribe(d => {
       this.dataSource = new MatTableDataSource(d);
+    })
+    this.cS.getLista().subscribe(d=>{
+      this.dataSource=new MatTableDataSource(d);
     })
     }
 
