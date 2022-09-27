@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Consumidor } from '../model/consumidor';
-import { Subject } from 'rxjs';
+import { EMPTY, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class ConsumidorService {
 url:string="http://localhost:5000/consumidor"
 private listaCambio = new Subject<Consumidor[]>()
+private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   listar(){
     return this.http.get<Consumidor[]>(this.url);
@@ -27,5 +28,20 @@ private listaCambio = new Subject<Consumidor[]>()
   }
   listarId(id:number){
     return this.http.get<Consumidor>(`${this.url}/${id}`);
+  }
+  eliminar(id:number){
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion(){
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean){
+    this.confirmaEliminacion.next(estado);
+  }
+  buscar (texto: string){
+    if(texto.length!=0){
+      return this.http.post<Consumidor[]>(`${this.url}/buscar`, texto.toLowerCase(),{});
+    }
+    return EMPTY;
   }
 }

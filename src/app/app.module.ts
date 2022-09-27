@@ -30,7 +30,9 @@ import { MatButtonModule } from '@angular/material/button';
 import{MatIconModule} from'@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ConsumidorCreaeditaComponent } from './page/consumidor/consumidor-creaedita/consumidor-creaedita.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConsumidorDialogoComponent } from './page/consumidor/consumidor-listar/consumidor-dialogo/consumidor-dialogo.component';
+import { ConsumidorBuscarComponent } from './page/consumidor/consumidor-buscar/consumidor-buscar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import { ConsumidorCreaeditaComponent } from './page/consumidor/consumidor-creae
     OfertaListarComponent,
     FacturaListarComponent,
     ReporteListarComponent,
-    ConsumidorCreaeditaComponent
+    ConsumidorCreaeditaComponent,
+    ConsumidorDialogoComponent,
+    ConsumidorBuscarComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,8 @@ import { ConsumidorCreaeditaComponent } from './page/consumidor/consumidor-creae
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
