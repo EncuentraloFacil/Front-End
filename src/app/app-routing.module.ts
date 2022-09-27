@@ -4,13 +4,13 @@ import { OfertaComponent } from './page/oferta/oferta.component';
 import { ConsumidorComponent } from './page/consumidor/consumidor.component';
 import { NotificacionComponent } from './page/notificacion/notificacion.component';
 import { DonacionComponent } from './page/donacion/donacion.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriaComponent } from './page/categoria/categoria.component';
 import { ProductoComponent } from './page/producto/producto.component';
 import { VendedorComponent } from './page/vendedor/vendedor.component';
 import { DetalleVentaComponent } from './page/detalle-venta/detalle-venta.component';
-
+import { ConsumidorCreaeditaComponent } from './page/consumidor/consumidor-creaedita/consumidor-creaedita.component';
 
 const routes: Routes = [{
   path: 'categoria', component:CategoriaComponent,children:[
@@ -39,7 +39,8 @@ const routes: Routes = [{
 },
 {
   path:'consumidor', component:ConsumidorComponent,children:[
-    
+    {path: 'nuevo', component: ConsumidorCreaeditaComponent},
+    {path: 'edicion/:id', component: ConsumidorCreaeditaComponent}
   ]
 },
 {
