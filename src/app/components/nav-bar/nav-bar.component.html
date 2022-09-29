@@ -1,24 +1,15 @@
 <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu" > 
-        <mat-icon>menu</mat-icon>
-        
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item [routerLink]="'/consumidor'">Consumidor</button>
-        <button mat-menu-item [routerLink]="'/notificacion'">Notificación</button>
-        <button mat-menu-item [routerLink]="'/vendedor'">Vendedor</button>
-        <button mat-menu-item [routerLink]="'/categoria'">Categoria</button>
-      </mat-menu>
+  <mat-toolbar color="primary">
+    <span>Encuentralo Fácil</span>
+    <span class="example-spacer"></span>
+    <button mat-button [routerLink]="'/consumidor'" >Consumidor</button>
+    <button mat-button [routerLink]="'/vendedor'">Vendedor</button>
+    <button mat-button [routerLink]="'/notificacion'">Notificación</button>
+    <button mat-button [routerLink]="'/categoria'">Categoria</button>
+    <span class="example-spacer"></span>
 
-      <span>Encuentralo Fácil</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>account_circle</mat-icon>
-      </button>
-      
-    </mat-toolbar>
-  </p>
-
-
-
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
