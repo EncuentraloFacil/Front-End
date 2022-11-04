@@ -25,7 +25,14 @@ import { ConsumidorListarComponent } from './page/consumidor/consumidor-listar/c
 import { OfertaListarComponent } from './page/oferta/oferta-listar/oferta-listar.component';
 import { FacturaListarComponent } from './page/factura/factura-listar/factura-listar.component';
 import { ReporteListarComponent } from './page/reporte/reporte-listar/reporte-listar.component';
-
+import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import{MatIconModule} from'@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { ConsumidorCreaeditaComponent } from './page/consumidor/consumidor-creaedita/consumidor-creaedita.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConsumidorDialogoComponent } from './page/consumidor/consumidor-listar/consumidor-dialogo/consumidor-dialogo.component';
+import { ConsumidorBuscarComponent } from './page/consumidor/consumidor-buscar/consumidor-buscar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,14 +55,22 @@ import { ReporteListarComponent } from './page/reporte/reporte-listar/reporte-li
     ConsumidorListarComponent,
     OfertaListarComponent,
     FacturaListarComponent,
-    ReporteListarComponent
+    ReporteListarComponent,
+    ConsumidorCreaeditaComponent,
+    ConsumidorDialogoComponent,
+    ConsumidorBuscarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
